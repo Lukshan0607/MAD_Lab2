@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:padding="24dp"
+    tools:context=".HealthGoalActivity">
+
+    <!-- Top Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_button_bg"
+            android:src="@drawable/ic_back"
+            android:contentDescription="@string/back_button_description"
+            app:tint="@color/secondary_700" />
+
+        <!-- Screen Title -->
+
+        <!-- Placeholder for symmetry -->
+        <TextView
+            android:id="@+id/assessmentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/assessment_title"
+            android:textAlignment="center"
+            android:textColor="@color/on_background"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+    </LinearLayout>
+
+    <!-- Main Question -->
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/what_s_your_health_goal"
+        android:textColor="@color/on_background"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <!-- Radio Button Group for options -->
+
+    <!-- Continue Button -->
+    <RadioGroup
+        android:id="@+id/healthGoalOptions"
+        android:layout_width="380dp"
+        android:layout_height="307dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_options_group_bg"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionText">
+
+        <RadioButton
+            android:id="@+id/option1"
+            style="@style/HealthGoalRadioButton"
+            android:drawableStart="@drawable/ic_heart"
+            android:text="@string/reduce_stress" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            style="@style/HealthGoalRadioButton"
+            android:backgroundTint="#751515"
+            android:checked="true"
+            android:drawableStart="@drawable/ic_happy_face"
+            android:text="@string/try_AIT_ai_therapy" />
+
+        <RadioButton
+            android:id="@+id/option3"
+            style="@style/HealthGoalRadioButton"
+            android:drawableStart="@drawable/ic_flag"
+            android:text="@string/cope_with_trauma" />
+
+        <RadioButton
+            android:id="@+id/option4"
+            style="@style/HealthGoalRadioButton"
+            android:drawableStart="@drawable/ic_happy_person"
+            android:text="@string/be_a_better_person" />
+
+        <RadioButton
+            android:id="@+id/option5"
+            style="@style/HealthGoalRadioButton"
+            android:drawableStart="@drawable/ic_lamp"
+            android:text="@string/just_trying_out_the_app" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@color/secondary_700"
+        android:padding="16dp"
+        android:text="@string/continue_button"
+        android:textColor="@color/on_primary"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
